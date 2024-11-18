@@ -3,7 +3,13 @@ Problem 1 Amount calculation program for zoo ticket sales operators
 
 # 利用方法
 
+cd ./src
+pip install pyt
+python manage.py calculation
 
+### python 環境が無い場合
+・docker pull python:3.11-slim
+・sudo docker compose up --build
 
 
 
