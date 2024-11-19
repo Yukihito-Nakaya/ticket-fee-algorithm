@@ -2,9 +2,9 @@
 Problem 1 Amount calculation program for zoo ticket sales operators
 
 # 開発環境
- ・macOS
- ・Python 3.9.6
- ・Docker version 20.10.23
+    ・macOS
+    ・Python 3.9.6
+    ・Docker version 20.10.23
 
 # 利用方法
 
@@ -12,15 +12,13 @@ python manage.py calculation 大人人数 子供人数 シニア人数　--disco
 
 ### Dockerを起動して利用する場合
 
-・docker pull python:3.11-slim
-
-・docker exec -it ticketFee python manage.py calculation 大人人数 子供人数 シニア人数　--discount (通常の場合:0,特別の場合:1) --holiday (休日でない場合:0,休日の場合:1)
+    ・docker pull python:3.11-slim
+    ・docker compose up --build
+    ・docker exec -it ticketFee python manage.py calculation 大人人数 子供人数 シニア人数　--discount (通常の場合:0,特別の場合:1) --holiday (休日でない場合:0,休日の場合:1)
 
 もしくは
-
-・sudo docker compose up --build
-・docker exec -it ticketFee /bin/bash
-・python manage.py calculation
+    ・docker exec -it ticketFee /bin/bash
+    ・python manage.py calculation
 
 # 問題内容
 ## 【前提】
