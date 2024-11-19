@@ -1,23 +1,26 @@
 # ticket-fee-algorithm
 Problem 1 Amount calculation program for zoo ticket sales operators
 
+# 開発環境
+・macOS
+・Python 3.9.6
+・Docker version 20.10.23
+
 # 利用方法
 
-cd ./src
-pip install pyt
-python manage.py calculation
+python manage.py calculation 大人人数 子供人数 シニア人数　--discount (通常の場合:0,特別の場合:1) --holiday (休日でない場合:0,休日の場合:1)
 
-### python 環境が無い場合
+### Dockerを起動して利用する場合
+
 ・docker pull python:3.11-slim
+
+・docker exec -it ticketFee python manage.py calculation 大人人数 子供人数 シニア人数　--discount (通常の場合:0,特別の場合:1) --holiday (休日でない場合:0,休日の場合:1)
+
+もしくは
+
 ・sudo docker compose up --build
 ・docker exec -it ticketFee /bin/bash
 ・python manage.py calculation
-
-
-
-
-
-
 
 # 問題内容
 ## 【前提】
@@ -45,9 +48,7 @@ python manage.py calculation
         ○ 金額変更前合計金額
         ○ 金額変更明細
 
-    ※ 四捨五入の条件がないため小数点以下は全て切り捨てます
-    ※ 休日の定義(祝日)は含むのか(土曜日)も含むのか　(土曜、日曜は休日　祝日、定休日は別途パラメーターで指定)
-    ※ 月曜日もしくは、水曜日の時の(休日)
+
 
 ## 【設問】
 下記仕様に沿ったプログラムを作成してください。
@@ -64,3 +65,9 @@ python manage.py calculation
     ⚫︎ プログラム本体
     ⚫︎ テスト結果
     ⚫︎ 仕様に対する質問内容と想定回答（あれば）
+
+### 仕様に対する質問内容
+    ※ 団体割引は先に10％割引なのか、割引後の10%割引なのか　(記載の通り上から実行していきます。)
+    ※ 四捨五入の条件がないため小数点以下は切り上げるのか、切り下げるのか　(全て切り捨てます。)
+    ※ 休日の定義(祝日)は含むのか(土曜日)も含むのでしょうか？　(土曜、日曜は休日　祝日、定休日は別途パラメーターで指定)
+    ※ 月曜日もしくは、水曜日の時の(休日)の場合はどちらを優先されるでしょうか？　(どちらも適用します。)
