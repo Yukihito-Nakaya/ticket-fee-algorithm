@@ -10,6 +10,9 @@ python manage.py calculation
 ### python 環境が無い場合
 ・docker pull python:3.11-slim
 ・sudo docker compose up --build
+・docker exec -it ticketFee /bin/bash
+・python manage.py calculation
+
 
 
 
