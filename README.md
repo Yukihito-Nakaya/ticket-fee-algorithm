@@ -75,6 +75,7 @@ Problem 1 Amount calculation program for zoo ticket sales operators
     テスト結果の内容はtest_result.txtに記載しております。
 
 テスト方法
+
     ・test.shを作成
     ・test.shに複数パータンに該当するdjangoのカスタムコマンドを実行
     ・実行結果をtest_result.txtに出力し確認
