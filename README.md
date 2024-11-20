@@ -19,7 +19,7 @@ Problem 1 Amount calculation program for zoo ticket sales operators
 もしくは
 
     ・docker exec -it ticketFee /bin/bash
-    ・python manage.py calculation
+    ・python manage.py calculation 大人人数 子供人数 シニア人数 --discount (通常の場合:0,特別の場合:1) --holiday (休日でない場合:0,休日の場合:1)
 
 # 問題内容
 ## 【前提】
@@ -30,9 +30,9 @@ Problem 1 Amount calculation program for zoo ticket sales operators
         ○ どちらのタイプを適用するかは窓口で確認してオペレータが適切(か)は個別にプログラムのパラメーターとして指定する。
           （チラシ等を持ってきたら割引的な扱いと想定してください
 
-    |  タイプ   | 大人 | 子供 | シニア |
-    |   通常   | 1000 | 500 |  800  |
-    |   特別   | 600  | 400 |  500  |
+    |  タイプ  |  大人  |  子供  | シニア  |
+    |   通常   | 1000  |  500  |   800  |
+    |   特別   | 600   |  400  |   500  |
 
     ⚫︎ 以下の条件のときに料金を変動させる。(特別タイプのチケットでも同様の条件で料金を変動させること)
         ○ 団体割引10人以上だと10%割引(子供は0.5人換算する)　※ 合計料金　× 0.9
