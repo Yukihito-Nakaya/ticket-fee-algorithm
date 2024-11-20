@@ -8,7 +8,7 @@ Problem 1 Amount calculation program for zoo ticket sales operators
 
 # 利用方法
 
-python manage.py calculation 大人人数 子供人数 シニア人数　--discount (通常の場合:0,特別の場合:1) --holiday (休日でない場合:0,休日の場合:1)
+    python manage.py calculation 大人人数 子供人数 シニア人数 --discount (通常の場合:0,特別の場合:1) --holiday (休日でない場合:0,休日の場合:1)
 
 ### Dockerを起動して利用する場合
 
