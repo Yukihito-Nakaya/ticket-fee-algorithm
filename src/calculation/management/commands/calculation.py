@@ -25,7 +25,16 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         tokyo_timezone = pytz.timezone('Asia/Tokyo')
         now = datetime.now(tokyo_timezone)
+
+        #テスト用 時間割引確認用
+        if options['time']:
+            now = datetime.strptime(options['time'], '%H:%M')
+
         weekday = now.weekday()
+
+        #テスト用　曜日割引確認用
+        if options['weekday']:
+            weekday = options['weekday']
         
         rate_table = RateTable()
         rate = rate_table.get_base_rate()
@@ -96,6 +105,7 @@ class Command(BaseCommand):
                 charge_details_data["休日料金"] = [f"{total_people}×200円",f"+{math.floor(disvalue)}円"]
 
             #曜日割引確認
+
             if weekday == 0 or weekday == 2:
                 disvalue = (total_people) * 100
                 sales_amount = sales_amount - disvalue
@@ -125,5 +135,9 @@ class Command(BaseCommand):
             parser.add_argument('seniors',type=int)
             parser.add_argument('--discount',default = 0,type=int)
             parser.add_argument('--holiday',default = 0, type=int)
+            #テスト用 時間割引確認用
+            parser.add_argument('--time',default = "12:00",type=str)
+            #テスト用　曜日割引確認用　（0:月曜日、1:火曜日、2:水曜日、3:木曜日、4:金曜日、5:土曜日、6:日曜日)
+            parser.add_argument('--weekday',default = 3, type=int)
         except Exception as e:
             raise CommandError(f"error occurred:{e}")
