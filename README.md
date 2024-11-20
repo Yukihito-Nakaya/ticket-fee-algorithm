@@ -17,6 +17,7 @@ Problem 1 Amount calculation program for zoo ticket sales operators
     ・docker exec -it ticketFee python manage.py calculation 大人人数 子供人数 シニア人数　--discount (通常の場合:0,特別の場合:1) --holiday (休日でない場合:0,休日の場合:1)
 
 もしくは
+
     ・docker exec -it ticketFee /bin/bash
     ・python manage.py calculation
 
